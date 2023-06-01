@@ -16,7 +16,7 @@ from flask_blog import app
 def show_entries():
     # ログインしていないとlogin.htmlにリダイレクト
     if not session.get('logged_in'):
-        return redirect('/login')
+        return redirect(url_for('login'))
     # templates/entries/index.htmlを返す設定
     return render_template('entries/index.html')
 
@@ -35,10 +35,12 @@ def login():
             flash('パスワードが違うよ！')
         else:
             # ログイン成功したらログイン状態に設定
+            # user_name = request.form['username']
+            # print(user_name)
             session['logged_in'] = True
             flash('ログインしました')
             # ホームへ移動
-            return redirect('/')
+            return redirect(url_for('show_entries'))
     return render_template('login.html')
     
 @app.route('/logout')
@@ -48,4 +50,4 @@ def logout():
     """
     session.pop('logged_in',None)
     flash('ログアウトしました')
-    return redirect('/')
+    return redirect(url_for('show_entries'))
