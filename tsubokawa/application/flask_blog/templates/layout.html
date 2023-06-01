@@ -1,3 +1,5 @@
+<!-- レイアウトのベーステンプレート -->
+
 <!doctype html>
 <title>Flask Blog</title>
 
@@ -17,12 +19,17 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="nav navbar-nav navbar-right">
+                {% if not session.logged_in %}
+                <!-- ログインしていないときの処理 -->
                 <li class="nav-item">
                     <a class="nav-link" href="/login">ログイン</a>
                 </li>
+                {% else %}
+                <!-- ログインしているときの処理 -->
                 <li class="nav-item">
                     <a href="/logout" class="nav-link">ログアウト</a>
                 </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
