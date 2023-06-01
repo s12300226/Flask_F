@@ -28,13 +28,15 @@ def show_tests():
 @app.route('/login', methods=['GET','POST'])
 def login():
     if request.method=='POST':
+        # username = request.form['username']
         if request.form['username']!=app.config['USERNAME']:
-            print('ユーザー名が違うよ')
+            flash('ユーザー名がちがうよ！')
         elif request.form['password']!= app.config['PASSWORD']:
-            print('パスワードが違うよ')
+            flash('パスワードが違うよ！')
         else:
             # ログイン成功したらログイン状態に設定
             session['logged_in'] = True
+            flash('ログインしました')
             # ホームへ移動
             return redirect('/')
     return render_template('login.html')
@@ -45,4 +47,5 @@ def logout():
     ログアウト処理
     """
     session.pop('logged_in',None)
+    flash('ログアウトしました')
     return redirect('/')

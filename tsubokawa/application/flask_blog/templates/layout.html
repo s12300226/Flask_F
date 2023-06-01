@@ -27,6 +27,7 @@
                 {% else %}
                 <!-- ログインしているときの処理 -->
                 <li class="nav-item">
+                    <!-- <p>{{username}}さん、こんにちは</p> -->
                     <a href="/logout" class="nav-link">ログアウト</a>
                 </li>
                 {% endif %}
@@ -34,6 +35,11 @@
         </div>
     </nav>
 
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-info" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
     <div class="blog-body">
         {%block body%}{%endblock%}
     </div>
