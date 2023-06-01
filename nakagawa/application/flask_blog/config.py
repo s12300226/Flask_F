@@ -1,3 +1,4 @@
+
 # DEBUG=True
 # SECRET_KEY='secret_key'
 # USERNAME='john'
@@ -11,3 +12,4 @@ SQLALCHEMY_DATABASE_URI = "mysql + pymysql://{user}:{password}@{host}/{database}
     "database" : os.getenv("DB_DATABASE", "ENSHU")
 })
 SQLALCHEMY_TRACK_MODIFICATIONS= False
+
