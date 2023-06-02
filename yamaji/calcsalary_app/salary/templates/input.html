@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
-<form action="{{url_for('input_value')}}" method=post>
+<form action="{{url_for('output_value')}}" method=post>
     <div class="form-group">
         <label for="InputSlary">給与</label>
         <input type="message" class="form-control" id="InputSalary" name=salary>
@@ -8,4 +8,5 @@
 
     <button type="submit" class="btn btn-primary">計算する</button>
 </form>
+
 {% endblock %}

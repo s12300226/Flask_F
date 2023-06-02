@@ -7,8 +7,8 @@ from decimal import Decimal, ROUND_HALF_UP
 def show_entries():
     return render_template("./input.html")
 
-@app.route('/input_value', methods=['GET', 'POST'])
-def input_value():
+@app.route('/output_value', methods=['GET', 'POST'])
+def output_value():
     if request.method:
         # バリデーション
         if request.form['salary'] == "":
@@ -29,8 +29,8 @@ def input_value():
     
     return redirect(url_for('show_entries'))
 
-@app.route('/out_result', methods=['GET', 'POST'])
-def out_result():
+@app.route('/return_input', methods=['GET', 'POST'])
+def return_input():
     return redirect(url_for('show_entries'))
 
 # 給与計算を行う関数
