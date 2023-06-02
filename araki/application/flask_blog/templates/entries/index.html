@@ -1,5 +1,16 @@
 {% extends"layout.html" %}
 {% block body %}
+<ul class="list-group list-groupflush">
+    {% for entry in entries %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{entry.title}}</h5>
+        </div>
+    </div>
+    {% else %}
+    投稿がありません
+    {% endfor %}
+</ul>
 <div class="container">
     <img src="../../../_pic/kappa.png" class="img-fluid" alt="">
 </div>
