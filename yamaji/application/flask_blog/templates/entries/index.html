@@ -1,5 +1,16 @@
 {% extends "layout.html" %}
 {% block body %}
-<p>投稿がありません</p>
+<ul class="list-group list-group-flush">
+    {% for entry in entries %}
+    <div class="card">
+        <dev class="card-body">
+            <h5 class="card-title">{{ entry.title }}</h5>
+            <a href="{{ url_for('show_entry', id=entry.id) }}" class="card-link">続きを読む</a>
+        </dev>
+    </div>
+    {% else %}
+    <p>投稿がありません</p>
+    {% endfor %}
+</ul>
 <!-- <img src="./imgs/neko_mini.jpg" width="100px" height="100px"> -->
 {% endblock %}
