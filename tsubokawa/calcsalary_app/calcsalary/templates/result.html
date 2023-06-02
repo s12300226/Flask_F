@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    結果発表～！
+{% extends "layout.html" %}
+
+{% block body %}
     <p>給与：{{ result_salary }}円の場合、支給額：{{ result_payment }}、税額：{{ result_tax }}円</p>
-</body>
-</html>
+
+    <form action="{{ url_for('show_entries') }}">
+        <button type="submit" class="btn btn-primary">戻る</button>
+    </form>
+{% endblock %}
