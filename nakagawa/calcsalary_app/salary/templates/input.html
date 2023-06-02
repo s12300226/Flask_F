@@ -7,6 +7,8 @@
     <title>給与計算</title>
 </head>
 <body>
+    {% extends "layout.html" %}
+    {% block body %}
     <form action="{{ url_for('input_value') }}" method=post>
         <div class="form-group">
             <label for="InputSalary">給与金額を入力しよう</label>
@@ -14,5 +16,6 @@
         </div>
         <button type="submit" class="btn btn-primary">計算する</button>
     </form>
+    {% endblock %}
 </body>
 </html>

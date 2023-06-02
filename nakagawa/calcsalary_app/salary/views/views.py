@@ -9,6 +9,19 @@ def show_entries():
 
 @app.route('/input_value', methods=['GET', 'POST'])
 def input_value():
+    if request.method:
+        # バリデーション
+        if request.form['salary'] == "":
+            flash("給与が未入力です。")
+            return redirect(url_for('show_entries'))
+
+        input_salary = int(request.form['salary'])
+        if input_salary > 9999999999:
+            flash("給与には最大9,999,999,999まで入力可能です。")
+            return redirect(url_for('show_entries'))
+        elif input_salary < 0:
+            flash("給与にマイナスの値は入力できません。")
+            return redirect(url_for('show_entries'))
     # print('penguin')
     # 給与計算をする
     input_salary=int(request.form['salary'])

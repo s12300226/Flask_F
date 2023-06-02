@@ -7,8 +7,12 @@
     <title>計算結果</title>
 </head>
 <body>
+    {% extends "layout.html" %}
+    {% block body %}
+    <h4>計算結果</h4>
     <p>給与：{{ salary }}</p>
     <p>支給額：{{ naka }}</p>
     <p>税額：{{ gawa }}</p>
+    {% endblock %}
 </body>
 </html>
