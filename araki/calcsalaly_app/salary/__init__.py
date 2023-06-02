@@ -1,6 +1,6 @@
 from flask import Flask #flaskのインポート
 
 app = Flask(__name__) 
-app.config.from_object('salaly.config')
+app.config.from_object('salary.config')
 
-import salaly.views
+import salary.views.views
