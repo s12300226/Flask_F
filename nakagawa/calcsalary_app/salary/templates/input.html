@@ -7,6 +7,12 @@
     <title>給与計算</title>
 </head>
 <body>
-    <h1>デシ丸を作りたい</h1>
+    <form action="{{ url_for('input_value') }}" method=post>
+        <div class="form-group">
+            <label for="InputSalary">給与金額を入力しよう</label>
+            <input type="text" class="form-control" id="InputSalary" name=salary>
+        </div>
+        <button type="submit" class="btn btn-primary">計算する</button>
+    </form>
 </body>
 </html>
