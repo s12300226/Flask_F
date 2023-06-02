@@ -1,0 +1,3 @@
+DEBUG=True
+USERNAME='john'
+PASSWORD='duel123'
