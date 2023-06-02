@@ -6,7 +6,7 @@ from calcsalary import app
 
 @app.route('/')
 def show_entries():
-    return render_template('index.html')
+    return render_template('index.html', default_input="")
 
 @app.route('/test')
 def show_tests():
@@ -17,11 +17,20 @@ def show_result():
 
     # POSTされた値を取得
     if request.method=='POST':
-
+        # バリデーションチェック
+        # 空欄かチェック
         if request.form['salary'] == '':
-            print('空欄')
-            flash('数字を入力してください')
+            flash('給与が未入力です。入力してください')
             return redirect(url_for('show_entries'))
+        
+        # 入力上限(10桁以上だとダメ)
+        if len(request.form['salary']) >= 10:
+            flash('給与には最大9,999,999,999まで入力可能です')
+            return render_template('index.html', default_input=request.form['salary'])
+        
+        if int(request.form['salary'])<0:
+            flash('給与にはマイナスの値は入力できません')
+            return render_template('index.html', default_input=request.form['salary'])
 
         input_salary = int(request.form['salary'])
 
