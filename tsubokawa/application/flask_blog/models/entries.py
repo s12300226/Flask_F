@@ -11,7 +11,7 @@ class Entry(db.Model):
     def __init__(self, title=None, text=None):
         self.title = title
         self.text = text
-        self.created_at = datetime.utcnow()
+        self.created_at = datetime.now()
 
     def __repr__(self):
         return'f<Entry id:{self.id} title:{self.title} text:{self.text}'

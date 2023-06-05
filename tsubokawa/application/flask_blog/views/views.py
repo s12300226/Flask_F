@@ -12,14 +12,6 @@ from flask import request, url_for, render_template, flash, session,redirect
 
 from flask_blog import app
 
-@app.route('/')
-def show_entries():
-    # ログインしていないとlogin.htmlにリダイレクト
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
-    # templates/entries/index.htmlを返す設定
-    return render_template('entries/index.html')
-
 @app.route('/test')
 def show_tests():
     # templates/entries/index.htmlを返す設定
@@ -41,6 +33,7 @@ def login():
             flash('ログインしました')
             # ホームへ移動
             return redirect(url_for('show_entries'))
+    print('-------------------------')
     return render_template('login.html')
     
 @app.route('/logout')
@@ -51,3 +44,5 @@ def logout():
     session.pop('logged_in',None)
     flash('ログアウトしました')
     return redirect(url_for('show_entries'))
+
+
