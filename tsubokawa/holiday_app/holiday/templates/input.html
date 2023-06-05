@@ -1,0 +1,32 @@
+
+<!-- 休日のデータを入力する画面です -->
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+
+
+        <form action="/add_holidays" method="post">
+            <div class="form-group">
+                <label for="InputDate">祝日  日付</label>
+                <input type="date" class="form-control" id="InputDate">
+            </div>
+            <div class="form-group">
+                <label for="InputText">祝日  テキスト</label>
+                <input type="text" class="form-control" id="InputText">
+            </div>
+        </form>
+        休日のデータを入力する画面です
+        <div class="container">
+            
+        </div>
+
+
+
+        <!-- 休日一覧を取得するボタンです -->
+        <form action="{{ url_for('show_holidays') }}">
+            <button type="submit" class="btn btn-secondary">一覧出力</button>
+        </form>
+
+{% endblock %}
