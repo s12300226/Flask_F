@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="{{url_for('show_entries')}}" method=get>
+    <div class="result">
+        <div class="result-body">
+            <h3 class="result-title">処理結果</h3>
+            <label for="InputDate">{{ text }}</label>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">戻る</button>
+</form>
+{% endblock %}

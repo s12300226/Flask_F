@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="{{url_for('show_entries')}}" method=get>
+    <div class="table-group" style="margin-top: 30px;">
+        <table class="table">
+            <thead style="background-color: aqua;">
+                <tr>
+                    <th>祝日</th>
+                    <th>テキスト</th>
+                </tr>
+            </thead>
+            
+            {% for entry in entries %}
+            <tbody>
+                <tr>
+                    <td>{{ entry.holi_date}}</td>
+                    <td>{{ entry.holi_text}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+
+    <button type="submit" class="btn btn-primary">戻る</button>
+</form>
+{% endblock %}
