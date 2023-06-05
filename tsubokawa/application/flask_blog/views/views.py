@@ -15,6 +15,19 @@ from flask_blog import app
 # Userクラスをインポートして、ログインユーザーの管理に使用
 from flask_blog.models.login import User
 
+from functools import wraps
+
+
+def login_required(view):
+    @wraps(view)
+    def inner(*args, **kwargs):
+        if not session.get('logged_in'):
+            return redirect(url_for('login'))
+        return view(*args, **kwargs)
+    return inner
+
+
+
 @app.route('/test')
 def show_tests():
     # templates/entries/index.htmlを返す設定

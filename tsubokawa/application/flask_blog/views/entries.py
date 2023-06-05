@@ -6,13 +6,12 @@ from flask_blog import db
 
 from flask_blog.models.entries import Entry
 
+from flask_blog.views.views import login_required
 
 
 @app.route('/')
+@login_required
 def show_entries():
-    # ログインしていないとlogin.htmlにリダイレクト
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
     # templates/entries/index.htmlを返す設定
     entries = Entry.query.order_by(Entry.id.desc()).all()
 
@@ -25,9 +24,8 @@ def show_entries():
 記事を作成するメソッド
 """
 @app.route('/entries', methods=['POST'])
+@login_required
 def add_entry():
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
     entry=Entry(
         title=request.form['title'],
         text=request.form['text']
@@ -44,9 +42,8 @@ def add_entry():
 
 """
 @app.route('/entries/new', methods=['GET'])
+@login_required
 def new_entry():
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
     return render_template('entries/new.html')
 
 
@@ -56,9 +53,8 @@ def new_entry():
 """
 
 @app.route('/entries/<int:id>', methods=['GET'])
+@login_required
 def show_entry(id):
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
     entry = Entry.query.get(id)
     return render_template('entries/show.html', entry=entry)
 
@@ -70,9 +66,8 @@ def show_entry(id):
 更新ボタンを押すと、更新ページに遷移するメソッド
 """
 @app.route('/entries/<int:id>/edit', methods=['GET'])
+@login_required
 def edit_entry(id):
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
     entry = Entry.query.get(id)
     return render_template('entries/edit.html', entry=entry)
 
@@ -82,9 +77,8 @@ def edit_entry(id):
 記事を更新するメソッド
 """
 @app.route('/entries/<int:id>/update', methods=['POST'])
+@login_required
 def update_entry(id):
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
     entry = Entry.query.get(id)
     entry.title = request.form['title']
     entry.text = request.form['text']
@@ -101,9 +95,8 @@ def update_entry(id):
 """
 
 @app.route('/entries/<int:id>/delete', methods=['POST'])
+@login_required
 def delete_entry(id):
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
     entry = Entry.query.get(id)
     db.session.delete(entry)
     db.session.commit()
