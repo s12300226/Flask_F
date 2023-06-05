@@ -24,8 +24,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('login') }}">ログイン</a>
                 </li>
+
                 {% else %}
                 <!-- ログインしているときの処理 -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('new_entry') }}">新規投稿</a>
+                </li>
                 <li class="nav-item">
                     <!-- <p>{{user_name}}さん、こんにちは</p> -->
                     <a href="{{ url_for('logout') }}" class="nav-link">ログアウト</a>

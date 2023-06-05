@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>成功！</p>
-    <h1>給与計算アプリ</h1>
-    <!-- <p>給与</p> -->
-    <form action="{{url_for('calc')}}" method="post">
-        <label for="InputSalary">給与</label>
-        <input type="number" name="salary">
-        <button type="submit">てい！</button>
+{# layout.htmlを再利用 #}
+{% extends "layout.html" %}
+
+{# 上書き #}
+{% block body %}
+
+{# 給与入力フォームを作成 #}
+    <form action="{{url_for('show_result')}}" method="post">
+        <div class="form-group"></div>
+            <label for="InputSalary">給与</label>
+            <input type="number" name="salary" class="form-control" value="{{ default_input }}">
+        </div>
+        <button type="submit" class="btn btn-primary">計算開始！！</button>
     </form>
-</body>
-</html>
+
+{% endblock %}
