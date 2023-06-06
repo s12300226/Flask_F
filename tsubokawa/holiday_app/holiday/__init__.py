@@ -7,4 +7,5 @@ app.config.from_object('holiday.config')
 
 db = SQLAlchemy(app)
 
-import holiday.views
+# 最後に使用するファイルをインポートする
+from holiday.views import list, input, maintenance_date

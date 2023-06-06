@@ -1,0 +1,37 @@
+<!-- 登録されている休日の一覧を出力する画面です -->
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+
+<table class="table">
+    <thead class="table-primary">
+        <tr>
+            <th>祝日</th>
+            <th>テキスト</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for holiday in holidays %}
+        <tr>
+            <td>{{ holiday.holi_date }}</td>
+            <td>{{ holiday.holi_text }}</td>
+        </tr>
+
+        {%else%}
+        <p>祝日マスタが登録されていません</p>
+
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+
+<form action="{{ url_for('home') }}">
+    <button class="btn btn-primary" type="submit">戻る</button>
+</form>
+{% endblock %}
