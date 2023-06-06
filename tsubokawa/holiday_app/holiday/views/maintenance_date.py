@@ -1,24 +1,8 @@
 from holiday import app
-from flask import request, redirect, url_for, render_template, flash, session
+from flask import request, redirect, url_for, render_template, flash
 from holiday.models.holidays import Holiday
 from holiday import db
 
-@app.route('/')
-def home():
-    """
-    祝日の入力画面に戻る処理
-    """
-    return render_template('input.html')
-
-
-@app.route('/list')
-def show_holidays():
-    """
-    祝日のリストを表示する処理
-    """
-    # holidaysにはDB内の全ての祝日のデータが入っている
-    holidays = Holiday.query.order_by(Holiday.holi_date.asc()).all()
-    return render_template('list.html', holidays=holidays)
 
 @app.route('/maintenance_date', methods=['POST'])
 def change_holiday():
