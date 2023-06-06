@@ -21,15 +21,34 @@ def show_holidays():
     return render_template('list.html', holidays=holidays)
 
 @app.route('/maintenance_date', methods=['POST'])
-def delete_holiday():
+def change_holiday():
     """
-    祝日が入力されたときの処理（登録・更新・削除はifで処理）
+    祝日が入力されたときの処理
+    登録・更新・削除はifで処理を分ける
     """
+    # バリデーション処理
+    # 祝日の文字が２０文字以上入力された場合の処理
+    if len(request.form['holiday_text'])> 20:
+        flash("祝日テキストの文字数は20文字以内で入力してください")
+        return redirect(url_for('home'))
+
+    # 祝日の日付が空の場合のエラー処理
+    elif request.form['holiday'] == "":
+        flash('日付が入力されていません。再度入力してください。')
+        return redirect(url_for('home'))
+    
 
     # 新規登録・更新ボタンが押されたときの処理
-    if request.form['button'] == 'insert_update':
+    elif request.form['button'] == 'insert_update':
         # データ更新：DB上に同じ日付のデータがあるとき
         # 同じ日付のデータを取得
+
+        # 祝日テキストが空欄の時に、エラー処理
+        if request.form['holiday_text'] == '':
+            flash('祝日テキストが空欄です。入力してください。')
+            return redirect(url_for('home'))
+
+
         holiday = Holiday.query.get(request.form['holiday'])
         if holiday != None:
 
@@ -50,16 +69,20 @@ def delete_holiday():
             db.session.add(holiday)
             db.session.commit()
             result_text = f'{holiday.holi_date}({holiday.holi_text})が登録されました'
-
-        return render_template('result.html', result_text=result_text)
     
 
 
     # 削除ボタンが押されたときの処理
     elif request.form['button'] == 'delete':
         holiday = Holiday.query.get(request.form['holiday'])
-        db.session.delete(holiday)
-        db.session.commit()
-        result_text = f'{holiday.holi_date}({holiday.holi_text})は削除されました'
+        # 削除する日付がデータに存在しない場合の処理
+        if holiday == None:
+            flash(f"{request.form['holiday']}は、祝日マスタに登録されてません")
+            return redirect(url_for('home'))
 
-        return render_template('result.html', result_text=result_text)
+        else:
+            db.session.delete(holiday)
+            db.session.commit()
+            result_text = f'{holiday.holi_date}({holiday.holi_text})は削除されました'
+
+    return render_template('result.html', result_text=result_text)

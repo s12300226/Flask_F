@@ -4,18 +4,31 @@
 
 {% block body %}
 
-休日一覧の画面です
 
-{% for holiday in holidays %}
-<div class="card">
-    <div class="card-body">
-        <p class="card-title">{{ holiday.holi_date }}</p>
-        <p>{{ holiday.holi_text }}</p>
-    </div>
-</div>
-{%else%}
-<p>No data</p>
-{%endfor%}
+
+<table class="table">
+    <thead class="table-primary">
+        <tr>
+            <th>祝日</th>
+            <th>テキスト</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for holiday in holidays %}
+        <tr>
+            <td>{{ holiday.holi_date }}</td>
+            <td>{{ holiday.holi_text }}</td>
+        </tr>
+
+        {%else%}
+        <p>祝日マスタが登録されていません</p>
+
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
 
 
 <form action="{{ url_for('home') }}">
