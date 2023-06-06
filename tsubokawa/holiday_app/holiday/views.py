@@ -8,10 +8,10 @@ def home():
     return render_template('input.html')
 
 
-@app.route('/show')
+@app.route('/list')
 def show_holidays():
     holidays = Holiday.query.order_by(Holiday.holi_date.asc()).all()
-    return render_template('show.html', holidays=holidays)
+    return render_template('list.html', holidays=holidays)
 
 @app.route('/maintenance_date', methods=['POST'])
 def delete_holiday():
