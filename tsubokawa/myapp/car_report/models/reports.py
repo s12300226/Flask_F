@@ -27,7 +27,7 @@ class Report(db.Model):
 
     def __init__(self,username,file_name,text):
         self.username = username
-        self.report_date = datetime.utcnow()
+        self.report_date = datetime.now()
         geo_request_url = 'https://get.geojs.io/v1/ip/geo.json'
         data = requests.get(geo_request_url).json()
         self.lat = data['latitude']

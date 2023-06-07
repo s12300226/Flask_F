@@ -11,6 +11,10 @@
     <form action="{{ url_for('show_reports') }}">
         <button type="submit">結果出力</button>
     </form>
+
+    <form action="{{ url_for('input') }}">
+        <button type="submit">入力画面へ</button>
+    </form>
     {% block body %}
     {% endblock %}
 </body>
