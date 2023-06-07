@@ -1,13 +1,15 @@
 {% extends "layout.html" %}
 {% block body %}
 <form action="{{url_for('show_entries')}}" method=get>
+    <!-- 登録、更新、削除の結果の表示 -->
     <div class="result">
         <div class="result-body">
             <h3 class="result-title">処理結果</h3>
+            <!-- maintenance_date.pyで処理結果をtextで返す -->
             <label for="InputDate">{{ text }}</label>
         </div>
     </div>
-
+    <!-- 入力画面に戻るボタン -->
     <button type="submit" class="btn btn-primary">戻る</button>
 </form>
 {% endblock %}

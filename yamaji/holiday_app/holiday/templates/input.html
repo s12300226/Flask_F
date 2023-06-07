@@ -1,24 +1,29 @@
 {% extends "layout.html" %}
 {% block body %}
 <form action="{{url_for('maintenance_date')}}" method=post>
+    <!-- 日付の入力処理 -->
     <div class="form-group">
         <label for="InputDate">祝日　日付</label>
         <input type="date" class="form-control" id="InputDate" name=holiday>
     </div>
 
+    <!-- 日付のテキスト入力処理 -->
     <div class="form-group">
         <label for="InputText">祝日　テキスト</label>
         <input type="text" class="form-control" id="InputText" name=holiday_text>
     </div>
 
+    <!-- DB要素の新規登録・更新ボタン -->
     <div class="btn-group">
         <button type="submit" class="btn btn-primary" name="button" value="insert_date" placeholder="yyyy/mm/dd">新規登録・更新</button>
     </div>
+    <!-- DB要素の削除ボタン -->
     <div class="btn-group">
         <button type="submit" class="btn btn-danger" name="button" value="delete">削除</button>
     </div> 
 </form>
 
+<!-- DBの一覧出力ボタン -->
 <form action="{{ url_for('out_list') }}" method="get">
     <button class="btn btn-secondary" type="submit" style="margin-top:5px;">一覧出力</button>
 </form>

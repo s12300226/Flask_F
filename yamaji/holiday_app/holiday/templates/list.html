@@ -2,6 +2,7 @@
 {% block body %}
 <form action="{{url_for('show_entries')}}" method=get>
     <div class="table-group" style="margin-top: 30px;">
+        <!-- DB一覧出力 -->
         <table class="table">
             <thead style="background-color: aqua;">
                 <tr>
@@ -10,6 +11,7 @@
                 </tr>
             </thead>
             
+            <!-- list.pyでDBのリスト一覧をentriesとして返す -->
             {% for entry in entries %}
             <tbody>
                 <tr>
