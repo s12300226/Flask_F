@@ -8,6 +8,9 @@
 </head>
 <body>
     <h3>おりじなるあぷり</h3>
+    <form action="{{ url_for('show_reports') }}">
+        <button type="submit">結果出力</button>
+    </form>
     {% block body %}
     {% endblock %}
 </body>

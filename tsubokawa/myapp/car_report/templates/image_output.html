@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th>通報日時</th>
+            <th>緯度</th>
+            <th>経度</th>
+            <th>画像</th>
+            <th>備考</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    {% for report in reports %}
+
+    <tr>
+        <td>{{ report.report_date }}</td>
+        <td>{{ report.lat }}</td>
+        <td>{{ report.lon }}</td>
+        {#
+            <td><img src="./car_report/static/image/{{ report.file_name }}" alt=""></td>
+            <td><img src="/home/matcha-23training/python/Flask/Flask_Frenchfries/tsubokawa/myapp/car_report/static/image/{{ report.file_name }}"></td>
+            #}
+        <td><img src="{{ url_for('static', filename='image/' + report.file_name) }}" alt="" style="width: 250px;"></td>
+        <td>{{ report.text }}</td>
+    </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+
+{#
+<img src="{{ url_for('static', filename='image/tsubo2023-06-06 08:02:06.343011.jpg') }}" alt="">
+#}
+
+<form action="{{ url_for('input') }}">
+    <button type="submit">戻る</button>
+</form>
+
+
+
+{% endblock %}
