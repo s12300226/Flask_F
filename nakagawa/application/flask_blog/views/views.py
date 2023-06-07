@@ -2,9 +2,7 @@ from flask import request, redirect, url_for, render_template, flash, session
 from flask_blog import app
 
 
-@app.route('/test')
-def test():
-    return render_template('test.html')
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
