@@ -9,4 +9,5 @@ db = SQLAlchemy(app)
 
 #import flask_blog.views
 
-from flask_blog.views import views, entries;
+# viewsファイルのインポート
+from flask_blog.views import views, entries

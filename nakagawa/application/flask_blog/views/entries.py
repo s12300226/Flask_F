@@ -1,13 +1,15 @@
 from flask import request, redirect, url_for, render_template, flash, session
 from flask_blog import app
 from flask_blog.models.entries import Entry
+from flask_blog import db
 
 @app.route('/')
 def show_entries():
     if not session.get('logged_in'):
         return redirect(url_for('login'))
     entries = Entry.query.order_by(Entry.id.desc()).all()
-    return render_template('index.html', entries=entries)
+    return render_template('entries/index.html', entries=entries)
+    # return render_template('test.html')
 
 @app.route('/entries/new', methods=['GET'])
 def new_entry():
