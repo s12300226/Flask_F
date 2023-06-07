@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<p>入力画面です</p>
+<form action="{{ url_for('add_report') }}" method="post" enctype="multipart/form-data">
+    {#
+    <label for="">テストテキスト</label>
+    <input type="text" name="text">
+    #}
+    <input type="file" name="image">
+    <textarea name="text" id="" cols="30" rows="10" placeholder="備考があれば記入してください"></textarea>
+    <button type="submit">送信</button>
+</form>
+
+{% endblock %}

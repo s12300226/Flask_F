@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>おりじなるあぷり</h3>
+    <form action="{{ url_for('show_reports') }}">
+        <button type="submit">マスタ管理用画面へ</button>
+    </form>
+
+    <form action="{{ url_for('input') }}">
+        <button type="submit">入力画面へ</button>
+    </form>
+
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-info" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
