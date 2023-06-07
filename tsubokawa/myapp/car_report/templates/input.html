@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<p>入力画面です</p>
+<form action="{{ url_for('input') }}" method="post" enctype="multipart/form-data">
+    <label for="">テストテキスト</label>
+    <input type="text" name="test_text">
+    <input type="file" name="image">
+    <button type="submit">送信</button>
+</form>
+
+{% endblock %}
