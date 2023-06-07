@@ -1,5 +1,6 @@
 from holiday import db
 
+#データベースの定義と操作
 class Entry(db.Model):
     __tablename__ ='holiday'
     holidate = db.Column(db.Date, primary_key=True)
