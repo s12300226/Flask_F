@@ -60,7 +60,8 @@ def add_report():
 
 @app.route('/show_reports')
 def show_reports():
-    reports = Report.query.order_by(Report.report_date.asc()).all()
+    # reports = Report.query.order_by(Report.report_date.asc()).all()
+    reports = db.session.query(Report).filter(Report.status=='未対応').order_by(Report.report_date.asc()).all()
     return render_template('image_output.html', reports=reports)
 
 
