@@ -9,7 +9,7 @@
 <body>
     <h3>おりじなるあぷり</h3>
     <form action="{{ url_for('show_reports') }}">
-        <button type="submit">結果出力</button>
+        <button type="submit">マスタ管理用画面へ</button>
     </form>
 
     <form action="{{ url_for('input') }}">
@@ -21,7 +21,7 @@
         {{message}}
     </div>
     {% endfor %}
-    
+
     {% block body %}
     {% endblock %}
 </body>
