@@ -59,10 +59,30 @@ def add_report():
     return redirect(url_for('input'))
 
 @app.route('/show_reports')
+
 def show_reports():
+    """
+    データを一覧表示する処理
+    """
     # reports = Report.query.order_by(Report.report_date.asc()).all()
+    # statusが未対応のデータのみ表示
     reports = db.session.query(Report).filter(Report.status=='未対応').order_by(Report.report_date.asc()).all()
     return render_template('image_output.html', reports=reports)
+
+@app.route('/change_status', methods=['POST'])
+def change_status():
+    """
+    statusを対応済みに変更する処理
+    """
+    print(request.form['change_button']) # idが出力されるはず
+    report_id = request.form['change_button']
+    report = db.session.query(Report).filter(Report.id==report_id).first()
+    report.status = '対応済み'
+    db.session.merge(report)
+    db.session.commit()
+    flash('対応済みに変更しました')
+    return redirect(url_for('show_reports'))
+
 
 
 @app.route('/result')

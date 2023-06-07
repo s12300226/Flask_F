@@ -15,6 +15,13 @@
     <form action="{{ url_for('input') }}">
         <button type="submit">入力画面へ</button>
     </form>
+
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-info" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+    
     {% block body %}
     {% endblock %}
 </body>

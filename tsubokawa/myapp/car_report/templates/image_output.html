@@ -28,6 +28,11 @@
             #}
         <td><img src="{{ url_for('static', filename='image/' + report.file_name) }}" alt="" style="width: 250px;"></td>
         <td>{{ report.text }}</td>
+        <td>
+            <form action="{{ url_for('change_status') }}" method="post">
+                <button type="submit" value="{{ report.id }}" name="change_button">対応済みにする</button>
+            </form>
+        </td>
     </tr>
 
     {% endfor %}

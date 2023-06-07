@@ -2,6 +2,9 @@ DEBUG=True
 USERNAME='tsubo'
 PASSWORD='test'
 SECRET_KEY = 'secret key'
+ADMINNAME='zenigata'
+ADMINPASS='lupin3rd'
+
 
 import os
 
