@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>JavaScriptでスロットゲームを作成</title>
+		<title></title>
 		<style>
 			body {
 				text-align: center;
@@ -12,8 +12,8 @@
 				list-style: none;
 			}
 			.slot {
-				width: 90%;
-				height: 500px;
+				width: 50%;
+				height: 400px;
 				overflow: hidden;
 				margin: auto;
 				border : solid 1px #333 ;
@@ -21,38 +21,46 @@
 			.slot-frame {
 				height: 500px;
 				position: relative;
-				overflow: hidden;
+
 				border : solid 1px #333 ;
 			}
 			.reels {
-				width: 31%;
+				width: 20%;
 				position: absolute;
 			}
 			.reels:nth-child(1) {
 				left: 0;
 			}
 			.reels:nth-child(2) {
-				left: 33%;
+				left: 150;
 			}
 			.reels:nth-child(3) {
-				right: 0;
+				left: 300;
 			}
 			.reel {
-				height: 270px;
+				height: 130px;
 			}
 			.reel img {
 				display: block;
-				width: 89%;
+				width: 120%;
 				margin: auto;
 			}
 		</style>
 	</head>
 	<body>
-		<h1>JavaScriptでスロットゲームを作成</h1>
+		<h1></h1>
 		<div class="slot">
 			<div class="slot-frame">
 				<ul class="reels">
+					<li class="reel"><img src="slot/img/slot5.png"></li>
+					<li class="reel"><img src="slot/img/slot2.png"></li>
 					<li class="reel"><img src="slot/img/slot1.png"></li>
+					<li class="reel"><img src="slot/img/slot3.png"></li>
+					<li class="reel"><img src="slot/img/slot4.png"></li>
+					<li class="reel"><img src="slot/img/slot5.png"></li>
+					<li class="reel"><img src="slot/img/slot1.png"></li>
+					<li class="reel"><img src="slot/img/slot2.png"></li>
+					<li class="reel"><img src="slot/img/slot5.png"></li>
 					<li class="reel"><img src="slot/img/slot2.png"></li>
 					<li class="reel"><img src="slot/img/slot1.png"></li>
 					<li class="reel"><img src="slot/img/slot3.png"></li>
@@ -64,28 +72,44 @@
 				<ul class="reels">
 					<li class="reel"><img src="slot/img/slot5.png"></li>
 					<li class="reel"><img src="slot/img/slot2.png"></li>
-					<li class="reel"><img src="slot/img/slot4.png"></li>
 					<li class="reel"><img src="slot/img/slot1.png"></li>
 					<li class="reel"><img src="slot/img/slot3.png"></li>
 					<li class="reel"><img src="slot/img/slot4.png"></li>
 					<li class="reel"><img src="slot/img/slot5.png"></li>
+					<li class="reel"><img src="slot/img/slot1.png"></li>
+					<li class="reel"><img src="slot/img/slot2.png"></li>
+					<li class="reel"><img src="slot/img/slot5.png"></li>
+					<li class="reel"><img src="slot/img/slot2.png"></li>
+					<li class="reel"><img src="slot/img/slot1.png"></li>
+					<li class="reel"><img src="slot/img/slot3.png"></li>
+					<li class="reel"><img src="slot/img/slot4.png"></li>
+					<li class="reel"><img src="slot/img/slot5.png"></li>
+					<li class="reel"><img src="slot/img/slot1.png"></li>
 					<li class="reel"><img src="slot/img/slot2.png"></li>
 				</ul>
 				<ul class="reels">
-					<li class="reel"><img src="slot/img/slot3.png"></li>
-					<li class="reel"><img src="slot/img/slot2.png"></li>
 					<li class="reel"><img src="slot/img/slot5.png"></li>
+					<li class="reel"><img src="slot/img/slot2.png"></li>
 					<li class="reel"><img src="slot/img/slot1.png"></li>
+					<li class="reel"><img src="slot/img/slot3.png"></li>
 					<li class="reel"><img src="slot/img/slot4.png"></li>
 					<li class="reel"><img src="slot/img/slot5.png"></li>
+					<li class="reel"><img src="slot/img/slot1.png"></li>
+					<li class="reel"><img src="slot/img/slot2.png"></li>
+					<li class="reel"><img src="slot/img/slot5.png"></li>
+					<li class="reel"><img src="slot/img/slot2.png"></li>
+					<li class="reel"><img src="slot/img/slot1.png"></li>
 					<li class="reel"><img src="slot/img/slot3.png"></li>
+					<li class="reel"><img src="slot/img/slot4.png"></li>
+					<li class="reel"><img src="slot/img/slot5.png"></li>
+					<li class="reel"><img src="slot/img/slot1.png"></li>
 					<li class="reel"><img src="slot/img/slot2.png"></li>
 				</ul>
 			</div>
 		</div>
 		<div>
+			<button type="button" class="btn-reset" disabled="true">bet</button>
 			<button type="button" class="btn-start">start</button>
-			<button type="button" class="btn-reset" disabled="true">reset</button>
 		</div>
 		<div>
 			<button type="button" class="btn-stop" data-val="0" disabled="true">stop 0</button>

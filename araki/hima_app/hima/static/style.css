@@ -1,0 +1,50 @@
+h1{
+    color:red;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+ul {
+    list-style: none;
+}
+.slot {
+    width: 50%;
+    height: 400px;
+    overflow: hidden;
+    margin: auto;
+    border : solid 1px #333 ;
+}
+.slot-frame {
+    height: 500px;
+    position: relative;
+
+    border : solid 1px #333 ;
+}
+.reels {
+    width: 20%;
+    position: absolute;
+}
+.reels:nth-child(1) {
+    left: 0;
+}
+.reels:nth-child(2) {
+    left: 150;
+}
+.reels:nth-child(3) {
+    left: 300;
+}
+.reel {
+    height: 130px;
+}
+.reel img {
+    display: block;
+    width: 120%;
+    margin: auto;
+}
