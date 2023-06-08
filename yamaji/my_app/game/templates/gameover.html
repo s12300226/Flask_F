@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+    
+    <p class="text-center font-large" style="font-size: 10rem;">答え：{{ ans_val[0] }}{{ ans_val[1] }}{{ ans_val[2] }}{{ ans_val[3] }}</p>
+
+    <form action="{{url_for('show_title')}}" class="form-inline" style="margin-top: 30px;">
+        <button type="submit" class="btn btn-danger">終了</button>
+    </form>
+</div>
+{% endblock %}

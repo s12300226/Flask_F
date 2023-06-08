@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+    <form action="{{url_for('input_value')}}" class="form-inline" method=post style="margin-top: 30px;">
+        <div class="input-group input-group-lg justify-content-center">
+            <!-- <span class="input-group-text">First and last name</span> -->
+            <input type="text" aria-label="num1" class="form-control col-lg-1 text-center" name=val1 maxlength='1' pattern="^[0-9]+$">
+            <input type="text" aria-label="num2" class="form-control col-lg-1 text-center" name=val2 maxlength='1' pattern="^[0-9]+$">
+            <input type="text" aria-label="num3" class="form-control col-lg-1 text-center" name=val3 maxlength='1' pattern="^[0-9]+$">
+            <input type="text" aria-label="num4" class="form-control col-lg-1 text-center" name=val4 maxlength='1' pattern="^[0-9]+$">
+        </div>
+        <button type="submit" class="btn btn-primary">回答</button>
+    </form>
+
+    <div class="table-group" style="margin-top: 30px;">
+        <!-- DB一覧出力 -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>回答回数</th>
+                    <th>入力値</th>
+                    <th>Hit</th>
+                    <th>Blow</th>
+                </tr>
+            </thead>
+            
+            <!-- list.pyでDBのリスト一覧をentriesとして返す -->
+            {% for answer in answers %}
+            <tbody>
+                <tr>
+                    <td>{{ answer.id }}</td>
+                    <td>{{ answer.answer}}</td>
+                    <td>{{ answer.hit}}</td>
+                    <td>{{ answer.blow}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+
+    <form action="{{url_for('finish_game')}}" class="form-inline" style="margin-top: 30px;">
+        <button type="submit" class="btn btn-danger">終了</button>
+    </form>
+
+    <form action="{{url_for('game_over')}}" class="form-inline" style="margin-top: 30px;">
+        <button type="submit" class="btn btn-danger">あきらめる</button>
+    </form>
+
+</div>
+{% endblock %}

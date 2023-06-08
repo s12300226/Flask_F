@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+    <form action="{{url_for('start_game')}}" method=post style="margin-top: 30px;">
+        <div class="form-group form-inline">
+            <label for="InputTitle" style="margin-right: 30px;">ユーザー名</label>
+            <input type="text" class="form-control" id="InputTitle" name=username>
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary">スタート</button>
+            </span>
+        </div>
+    </form>
+
+    <div class="rule-text">
+        <h3 margin-top: 50px;">ルール</h3>
+        <p>0~9の中から4つの数字を選んで作られた4桁の数字を当てるゲームです。</p>
+        <p>4桁数字を入力するとhitとblowが解答されます。</p>
+        <p>hit：数字と場所が当たっている数</p>
+        <p>blow：数字は当たっているが場所が当たっていない数</p>
+        <p>例）答え：7586　入力：7163　の場合、1Hit 2Blow</p>
+    </div>
+
+    <h3 style="padding-top: 30px;">ランキング</h3>
+    <div class="table-group" style="margin-top: 30px;">
+        <!-- DB一覧出力 -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ユーザー名</th>
+                    <th>回答数</th>
+                </tr>
+            </thead>
+            
+            <!-- list.pyでDBのリスト一覧をentriesとして返す -->
+            {% for player_data in ranking %}
+            <tbody>
+                <tr>
+                    <td>{{ player_data.name}}</td>
+                    <td>{{ player_data.score}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}
