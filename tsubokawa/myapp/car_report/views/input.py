@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 from car_report import db
 from car_report.models.reports import Report
+from car_report.models.reports_mst import Mst_Report
 
 new_filename = 'デフォルト'
 
@@ -83,6 +84,37 @@ def change_status():
     flash('対応済みに変更しました')
     return redirect(url_for('show_reports'))
 
+
+@app.route('/mst_login', methods=['GET', 'POST'])
+def mst_login():
+    """
+    Get時はマスターログイン画面に遷移する処理
+    Post:入力された値が管理者かどうかのチェック
+    管理者の場合、result.htmlへ遷移
+    """
+    if request.method=='POST':
+        mst_reports = Mst_Report.query.order_by(Mst_Report.mst_id.asc()).all()
+        for mst_report in mst_reports:
+            if request.form['mst_name'] == mst_report.mst_name\
+            and request.form['mst_pass'] == mst_report.mst_pass:
+                session['logged_in'] = True
+                flash('管理者としてログインしました')
+                # result.hemlに遷移
+                return redirect(url_for('show_reports'))
+        flash('ユーザー名かパスワードが違います')
+    return render_template('mst_login.html')
+            
+
+    # return render_template('mst_login.html')
+
+@app.route('/logout')
+def logout():
+    """
+    ログアウト処理
+    """
+    session.pop('logged_in', None)
+    flash('ログアウトしました')
+    return redirect(url_for('input'))
 
 
 @app.route('/result')
