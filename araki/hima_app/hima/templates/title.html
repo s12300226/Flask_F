@@ -14,9 +14,10 @@
         }
         .slot {
             width: 50%;
-            height: 270px;
+            height: 280px;
             overflow: hidden;
-            margin: auto;
+            margin-left: auto;
+            margin-right: auto;
             border : solid 1px #333 ;
         }
         .slot-frame {
@@ -29,20 +30,25 @@
             position: absolute;
         }
         .reels:nth-child(1) {
-            left: 10px;
+            left: -10px;
         }
         .reels:nth-child(2) {
-            margin-left: 160px;
+            margin-left: 140px;
         }
         .reels:nth-child(3) {
-            left: 310px;
+            left: 290px;
         }
         .reel {
             height: 90px;
         }
         .reel img {
             display: block;
-            width: 120%;
+            width: 180%;
+            margin: auto;
+        }
+        .reel2 img {
+            display: block;
+            width: 210%;
             margin: auto;
         }
     </style>
@@ -54,71 +60,577 @@
 <div class="slot">
     <div class="slot-frame">
         <ul class="reels">
-            <li class="reel"><img src="../../../_pic/01.png"></li>
-            <li class="reel"><img src="../../../_pic/05.png"></li>
-            <li class="reel"><img src="../../../_pic/01.png"></li>
-            <li class="reel"><img src="../../../_pic/02.png"></li>
-            <li class="reel"><img src="../../../_pic/02.png"></li>
-            <li class="reel"><img src="../../../_pic/04.png"></li>
-            <li class="reel"><img src="../../../_pic/02.png"></li>
-            <li class="reel"><img src="../../../_pic/01.png"></li>
-            <li class="reel"><img src="../../../_pic/06.png"></li>
-            <li class="reel"><img src="../../../_pic/03.png"></li>
-            <li class="reel"><img src="../../../_pic/04.png"></li>
-            <li class="reel"><img src="../../../_pic/02.png"></li>
-            <li class="reel"><img src="../../../_pic/01.png"></li>
-            <li class="reel"><img src="../../../_pic/05.png"></li>
-            <li class="reel"><img src="../../../_pic/04.png"></li>
-            <li class="reel"><img src="../../../_pic/02.png"></li>
-            <li class="reel"><img src="../../../_pic/01.png"></li>
-            <li class="reel"><img src="../../../_pic/00.png"></li>
-            <li class="reel"><img src="../../../_pic/00.png"></li>
-            <li class="reel"><img src="../../../_pic/01.png"></li>
-            <li class="reel"><img src="../../../_pic/02.png"></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot00.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
         </ul>
         <ul class="reels">
-            <li class="reel"><img src="../../../_pic/slot5.png"></li>
-            <li class="reel"><img src="../../../_pic/slot2.png"></li>
-            <li class="reel"><img src="../../../_pic/slot1.png"></li>
-            <li class="reel"><img src="../../../_pic/slot3.png"></li>
-            <li class="reel"><img src="../../../_pic/slot4.png"></li>
-            <li class="reel"><img src="../../../_pic/slot5.png"></li>
-            <li class="reel"><img src="../../../_pic/slot2.png"></li>
-            <li class="reel"><img src="../../../_pic/slot1.png"></li>
-            <li class="reel"><img src="../../../_pic/slot3.png"></li>
-            <li class="reel"><img src="../../../_pic/slot4.png"></li>
-            <li class="reel"><img src="../../../_pic/slot5.png"></li>
-            <li class="reel"><img src="../../../_pic/slot2.png"></li>
-            <li class="reel"><img src="../../../_pic/slot1.png"></li>
-            <li class="reel"><img src="../../../_pic/slot3.png"></li>
-            <li class="reel"><img src="../../../_pic/slot4.png"></li>
-            <li class="reel"><img src="../../../_pic/slot5.png"></li>
-            <li class="reel"><img src="../../../_pic/slot2.png"></li>
-            <li class="reel"><img src="../../../_pic/slot1.png"></li>
-            <li class="reel"><img src="../../../_pic/slot3.png"></li>
-            <li class="reel"><img src="../../../_pic/slot4.png"></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
         </ul>
         <ul class="reels">
-            <li class="reel"><img src="../../../_pic/slot5.png"></li>
-            <li class="reel"><img src="../../../_pic/slot2.png"></li>
-            <li class="reel"><img src="../../../_pic/slot1.png"></li>
-            <li class="reel"><img src="../../../_pic/slot3.png"></li>
-            <li class="reel"><img src="../../../_pic/slot4.png"></li>
-            <li class="reel"><img src="../../../_pic/slot5.png"></li>
-            <li class="reel"><img src="../../../_pic/slot2.png"></li>
-            <li class="reel"><img src="../../../_pic/slot1.png"></li>
-            <li class="reel"><img src="../../../_pic/slot3.png"></li>
-            <li class="reel"><img src="../../../_pic/slot4.png"></li>
-            <li class="reel"><img src="../../../_pic/slot5.png"></li>
-            <li class="reel"><img src="../../../_pic/slot2.png"></li>
-            <li class="reel"><img src="../../../_pic/slot1.png"></li>
-            <li class="reel"><img src="../../../_pic/slot3.png"></li>
-            <li class="reel"><img src="../../../_pic/slot4.png"></li>
-            <li class="reel"><img src="../../../_pic/slot5.png"></li>
-            <li class="reel"><img src="../../../_pic/slot2.png"></li>
-            <li class="reel"><img src="../../../_pic/slot1.png"></li>
-            <li class="reel"><img src="../../../_pic/slot3.png"></li>
-            <li class="reel"><img src="../../../_pic/slot4.png"></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot06.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot04.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot02.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot05.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot03.png') }}" alt=""></li>
+            <li class="reel"><img src="{{ url_for('static', filename='_pic/slot01.png') }}" alt=""></li>
     </div>
 </div>
 
@@ -138,7 +650,7 @@
         "use strict";
 
         /*スロットのリール回転速度(実行毎秒数)*/
-        var sec = 200;
+        var sec = 100;
 
         /*
         ・スロットのリールelement
@@ -198,7 +710,7 @@
              * スロットの回転アニメーション
              */
             animation: function (index) {
-                if (reelCounts[index] >= 18){
+                if (reelCounts[index] >= 166){
                     reelCounts[index] = 0;
                 }
                 $('.reels').eq(index).animate({
