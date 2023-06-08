@@ -57,6 +57,7 @@ def add_report():
 
     db.session.add(report)
     db.session.commit()
+    flash('通報が完了しました')
     return redirect(url_for('input'))
 
 @app.route('/show_reports', methods=['POST','GET'])
@@ -65,15 +66,17 @@ def show_reports():
     """
     データを一覧表示する処理
     """
+    status = 'undone'
     if request.method=='POST' and request.form['status']=='done':
         # 対応済みのものを表示
         print('対応済みのものを出すよ')
+        status = 'done'
         reports = db.session.query(Report).filter(Report.status=='対応済み').order_by(Report.report_date.asc()).all()
 
     else:
     # statusが未対応のデータのみ表示
         reports = db.session.query(Report).filter(Report.status=='未対応').order_by(Report.report_date.asc()).all()
-    return render_template('image_output.html', reports=reports)
+    return render_template('image_output.html', reports=reports, status=status)
 
 @app.route('/change_status', methods=['POST'])
 def change_status():
