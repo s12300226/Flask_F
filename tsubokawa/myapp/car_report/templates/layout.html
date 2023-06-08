@@ -5,12 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 <body>
     <h3>おりじなるあぷり</h3>
-    <form action="{{ url_for('show_reports') }}">
+    {% if not session.logged_in %}
+    <form action="{{ url_for('mst_login') }}">
         <button type="submit">マスタ管理用画面へ</button>
     </form>
+
+    {% else %}
+    <form action="{{ url_for('show_reports') }}">
+        <button type="submit">一覧表示</button>
+    </form>
+    <form action="{{ url_for('logout') }}">
+        <button type="submit">ログアウト</button>
+    </form>
+
+    {% endif %}
 
     <form action="{{ url_for('input') }}">
         <button type="submit">入力画面へ</button>

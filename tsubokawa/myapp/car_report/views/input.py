@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 from car_report import db
 from car_report.models.reports import Report
+from car_report.models.reports_mst import Mst_Report
 
 new_filename = 'デフォルト'
 
@@ -58,15 +59,20 @@ def add_report():
     db.session.commit()
     return redirect(url_for('input'))
 
-@app.route('/show_reports')
+@app.route('/show_reports', methods=['POST','GET'])
 
 def show_reports():
     """
     データを一覧表示する処理
     """
-    # reports = Report.query.order_by(Report.report_date.asc()).all()
+    if request.method=='POST' and request.form['status']=='done':
+        # 対応済みのものを表示
+        print('対応済みのものを出すよ')
+        reports = db.session.query(Report).filter(Report.status=='対応済み').order_by(Report.report_date.asc()).all()
+
+    else:
     # statusが未対応のデータのみ表示
-    reports = db.session.query(Report).filter(Report.status=='未対応').order_by(Report.report_date.asc()).all()
+        reports = db.session.query(Report).filter(Report.status=='未対応').order_by(Report.report_date.asc()).all()
     return render_template('image_output.html', reports=reports)
 
 @app.route('/change_status', methods=['POST'])
@@ -83,6 +89,37 @@ def change_status():
     flash('対応済みに変更しました')
     return redirect(url_for('show_reports'))
 
+
+@app.route('/mst_login', methods=['GET', 'POST'])
+def mst_login():
+    """
+    Get時はマスターログイン画面に遷移する処理
+    Post:入力された値が管理者かどうかのチェック
+    管理者の場合、result.htmlへ遷移
+    """
+    if request.method=='POST':
+        mst_reports = Mst_Report.query.order_by(Mst_Report.mst_id.asc()).all()
+        for mst_report in mst_reports:
+            if request.form['mst_name'] == mst_report.mst_name\
+            and request.form['mst_pass'] == mst_report.mst_pass:
+                session['logged_in'] = True
+                flash('管理者としてログインしました')
+                # result.hemlに遷移
+                return redirect(url_for('show_reports'))
+        flash('ユーザー名かパスワードが違います')
+    return render_template('mst_login.html')
+            
+
+    # return render_template('mst_login.html')
+
+@app.route('/logout')
+def logout():
+    """
+    ログアウト処理
+    """
+    session.pop('logged_in', None)
+    flash('ログアウトしました')
+    return redirect(url_for('input'))
 
 
 @app.route('/result')
