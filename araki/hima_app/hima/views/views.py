@@ -5,4 +5,6 @@ from hima import app #
 def start():
     return render_template('title.html')
 
-
+@app.route('/blank')
+def blank_entry():
+    return render_template('blank.html')
