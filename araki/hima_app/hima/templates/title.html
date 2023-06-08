@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <!-- <style>
+    <style>
         body {
             text-align: center;
             padding: 0;
@@ -14,7 +14,7 @@
         }
         .slot {
             width: 50%;
-            height: 400px;
+            height: 270px;
             overflow: hidden;
             margin: auto;
             border : solid 1px #333 ;
@@ -22,7 +22,6 @@
         .slot-frame {
             height: 500px;
             position: relative;
-
             border : solid 1px #333 ;
         }
         .reels {
@@ -30,30 +29,64 @@
             position: absolute;
         }
         .reels:nth-child(1) {
-            left: 0;
+            left: 10px;
         }
         .reels:nth-child(2) {
-            left: 150;
+            margin-left: 160px;
         }
         .reels:nth-child(3) {
-            left: 300;
+            left: 310px;
         }
         .reel {
-            height: 130px;
+            height: 90px;
         }
         .reel img {
             display: block;
             width: 120%;
             margin: auto;
         }
-    </style> -->
+    </style>
 </head>
 
 <body>
-<h1>あ</h1>
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+<h1></h1>
 <div class="slot">
     <div class="slot-frame">
         <ul class="reels">
+            <li class="reel"><img src="../../../_pic/01.png"></li>
+            <li class="reel"><img src="../../../_pic/05.png"></li>
+            <li class="reel"><img src="../../../_pic/01.png"></li>
+            <li class="reel"><img src="../../../_pic/02.png"></li>
+            <li class="reel"><img src="../../../_pic/02.png"></li>
+            <li class="reel"><img src="../../../_pic/04.png"></li>
+            <li class="reel"><img src="../../../_pic/02.png"></li>
+            <li class="reel"><img src="../../../_pic/01.png"></li>
+            <li class="reel"><img src="../../../_pic/06.png"></li>
+            <li class="reel"><img src="../../../_pic/03.png"></li>
+            <li class="reel"><img src="../../../_pic/04.png"></li>
+            <li class="reel"><img src="../../../_pic/02.png"></li>
+            <li class="reel"><img src="../../../_pic/01.png"></li>
+            <li class="reel"><img src="../../../_pic/05.png"></li>
+            <li class="reel"><img src="../../../_pic/04.png"></li>
+            <li class="reel"><img src="../../../_pic/02.png"></li>
+            <li class="reel"><img src="../../../_pic/01.png"></li>
+            <li class="reel"><img src="../../../_pic/00.png"></li>
+            <li class="reel"><img src="../../../_pic/00.png"></li>
+            <li class="reel"><img src="../../../_pic/01.png"></li>
+            <li class="reel"><img src="../../../_pic/02.png"></li>
+        </ul>
+        <ul class="reels">
+            <li class="reel"><img src="../../../_pic/slot5.png"></li>
+            <li class="reel"><img src="../../../_pic/slot2.png"></li>
+            <li class="reel"><img src="../../../_pic/slot1.png"></li>
+            <li class="reel"><img src="../../../_pic/slot3.png"></li>
+            <li class="reel"><img src="../../../_pic/slot4.png"></li>
+            <li class="reel"><img src="../../../_pic/slot5.png"></li>
+            <li class="reel"><img src="../../../_pic/slot2.png"></li>
+            <li class="reel"><img src="../../../_pic/slot1.png"></li>
+            <li class="reel"><img src="../../../_pic/slot3.png"></li>
+            <li class="reel"><img src="../../../_pic/slot4.png"></li>
             <li class="reel"><img src="../../../_pic/slot5.png"></li>
             <li class="reel"><img src="../../../_pic/slot2.png"></li>
             <li class="reel"><img src="../../../_pic/slot1.png"></li>
@@ -76,8 +109,6 @@
             <li class="reel"><img src="../../../_pic/slot1.png"></li>
             <li class="reel"><img src="../../../_pic/slot3.png"></li>
             <li class="reel"><img src="../../../_pic/slot4.png"></li>
-        </ul>
-        <ul class="reels">
             <li class="reel"><img src="../../../_pic/slot5.png"></li>
             <li class="reel"><img src="../../../_pic/slot2.png"></li>
             <li class="reel"><img src="../../../_pic/slot1.png"></li>
@@ -88,7 +119,6 @@
             <li class="reel"><img src="../../../_pic/slot1.png"></li>
             <li class="reel"><img src="../../../_pic/slot3.png"></li>
             <li class="reel"><img src="../../../_pic/slot4.png"></li>
-        </ul>
     </div>
 </div>
 
@@ -97,9 +127,9 @@
     <button type="button" class="btn-start">start</button>
 </div>
 <div>
-    <button type="button" class="btn-stop" data-val="0" disabled="true">stop 0</button>
-    <button type="button" class="btn-stop" data-val="1" disabled="true">stop 1</button>
-    <button type="button" class="btn-stop" data-val="2" disabled="true">stop 2</button>
+    <button type="button" class="btn-stop" data-val="0" disabled="true"> Left </button>
+    <button type="button" class="btn-stop" data-val="1" disabled="true">Center</button>
+    <button type="button" class="btn-stop" data-val="2" disabled="true"> Right</button>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -108,7 +138,7 @@
         "use strict";
 
         /*スロットのリール回転速度(実行毎秒数)*/
-        var sec = 100;
+        var sec = 200;
 
         /*
         ・スロットのリールelement
@@ -155,7 +185,7 @@
                 slotFrameHeight    = $('.slot-frame').outerHeight();
                 slotReelsHeight    = $('.reels').eq(0).outerHeight();
                 slotReelItemHeight = $('.reel').eq(0).outerHeight();
-                slotReelStart      = 5 - 2;
+                slotReelStart      = 10 - 0;
                 // リールの上下は、半分だけ表示させるための位置調整
                 slotReelStartHeight = -slotReelsHeight;
                 slotReelStartHeight = slotReelStartHeight + slotFrameHeight + ((slotReelItemHeight * 3 / 2) - (slotFrameHeight / 2));
@@ -168,26 +198,25 @@
              * スロットの回転アニメーション
              */
             animation: function (index) {
-                if (reelCounts[index] >= 9) {
+                if (reelCounts[index] >= 18){
                     reelCounts[index] = 0;
                 }
-
-
                 $('.reels').eq(index).animate({
                     'top': slotReelStartHeight + (reelCounts[index] * slotReelItemHeight)
-                }, {
+                },
+                {
                     duration: sec,
                     easing: 'linear',
-                    complete: function () {
-                        console.log('アニメーション', '完了', index, reelCounts[index]);
+                    complete: function () 
+                    {
                         if (stopReelFlag[index]) {
-                            console.log('アニメーション', 'ストップ', index, reelCounts[index]);
                             return ;
                         }
                         // 移動階数をカウント
                         reelCounts[index]++;
                         // スロット回転のアニメーションを実行する
                         Slot.animation(index);
+
                     }
                 });
             },
