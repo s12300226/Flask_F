@@ -36,3 +36,7 @@ label {
 .status {
     margin:20px 0;
 }
+
+#map {
+    margin: 200px auto;
+}

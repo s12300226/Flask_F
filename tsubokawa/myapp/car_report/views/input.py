@@ -6,6 +6,10 @@ from car_report import db
 from car_report.models.reports import Report
 from car_report.models.reports_mst import Mst_Report
 
+import pandas as pd
+import folium
+
+
 new_filename = 'デフォルト'
 
 @app.route('/')
@@ -128,3 +132,26 @@ def logout():
 @app.route('/result')
 def result():
     return render_template('result.html', new_filename=new_filename)
+
+@app.route('/map',methods=['GET','POST'])
+def map():
+    map1 = folium.Map(
+        location=[35.69, 139.69],
+        zoom_start=10,
+        tiles = "OpenStreetMap"
+    )
+    reports = db.session.query(Report).filter(Report.status=='未対応').order_by(Report.report_date.asc()).all()
+    for report in reports:
+        folium.Circle(
+            radius=30,
+            location=[report.lat,report.lon],
+            # location=[35.69, 139.69],
+            tooltip=report.text,
+            color="green",
+            fill=True,
+            fill_color="lightgreen"
+        ).add_to(map1)
+    
+    map1.save('./car_report/templates/map.html')
+
+    return render_template('map_show.html')
