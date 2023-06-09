@@ -1,3 +1,42 @@
-* {
-    color:red
+.btn {
+    margin-left: 15px;
+    margin: 15px 15px;
+}
+
+body {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#navigation { 
+    background-color: rgb(30, 11, 11);
+    color:white;
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 50px;
+}
+
+.submit_btn {
+    display: block;
+    margin: 20px auto;
+
+}
+
+.table {
+    text-align: center;
+}
+
+.status {
+    margin:20px 0;
+}
+
+#map {
+    margin: 200px auto;
 }

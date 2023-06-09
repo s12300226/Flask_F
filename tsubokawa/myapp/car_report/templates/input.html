@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{#
 
-<p>入力画面です</p>
+#}
+<h4>通報画面</h4>
+<p>あなたが見つけた路上駐車を通報しましょう！</p>
 <form action="{{ url_for('add_report') }}" method="post" enctype="multipart/form-data">
-    {#
-    <label for="">テストテキスト</label>
-    <input type="text" name="text">
-    #}
-    <input type="file" name="image">
-    <textarea name="text" id="" cols="30" rows="10" placeholder="備考があれば記入してください"></textarea>
-    <button type="submit">送信</button>
+    <label for="image">違法駐車している画像を送って下さい</label>
+    <input type="file" name="image" accept="image/*">
+    <label for="text">詳しい場所などが分かれば教えてください</label>
+    <textarea name="text" id="" cols="50" rows="5" placeholder="備考を記入してください"></textarea>
+    <button type="submit" class="submit_btn btn btn-primary">送信</button>
 </form>
 
 {% endblock %}
