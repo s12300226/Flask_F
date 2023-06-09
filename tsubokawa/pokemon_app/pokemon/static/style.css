@@ -1,0 +1,88 @@
+#title { 
+    text-align: center;
+    margin: 20px;
+}
+
+#game_show {
+    width: 500px;
+    height: 500px;
+    background: #f0f0f0;
+    margin: 0 auto;
+    border: #000 solid 2px;
+    margin-bottom: 100px;
+    position: relative;
+    top:0;
+    left:0;
+}
+
+#player {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    position: relative;
+    top: 180px;
+    left:240px;
+    z-index: 10;
+}
+
+#grass {
+    width: 200px;
+    height: 100px;
+    background-color: green;
+    position: relative;
+    top:230px;
+    left:240px;
+}
+
+#battle_show {
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    border: #919191 solid 1px;
+    position: relative;
+    top:0;
+    left:0;
+}
+
+#monster {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top:20px;
+    left:600px;
+    /* background-color: purple; */
+    z-index: 10;
+}
+
+#command_show {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    top:50px;
+    left:0px;
+    background-color: rgb(193, 193, 193);
+    z-index: 10;
+    padding: 50px;
+    padding-top:30px;
+}
+
+#commands {
+    display: flex;
+    justify-content: space-around;
+}
+
+#mons_info {
+    position:relative;
+    top:20px;
+    left:600px;
+    width: 150px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+#player_info {
+    /* text-align: center; */
+    font-size: large;
+    font-weight: bold;
+}

@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div id="game_show">
+    <div id="player" style='left:10px'></div>
+    <div id="grass"></div>
+</div>
+
+<button id="battle">戦闘画面へ</button>
+
+{{ playerLeft}}
+{{ playerTop }}
+
+<script>
+    let player_pos
+    // 読み込み時にプレイヤーの位置を変える
+    $(document).ready(function(){
+        console.log("hoge");
+        $('#player').css('left', '{{ playerLeft }}px');
+        $('#player').css('top', '{{ playerTop }}px')
+    })
+    // キー入力時のイベント管理
+    $(window).keydown(function(e){
+        // A:左移動
+        if(e.keyCode==65){ 
+            $('#player').css('left','-=10')
+            checkPos()
+        }
+        // W:上移動
+        else if(e.keyCode==87){
+            $('#player').css('top', '-=10')
+            checkPos()
+        }
+        // D：右移動
+        else if (e.keyCode==68){
+            $('#player').css('left', '+=10')
+            checkPos()
+        }
+        // S:下移動
+        else if (e.keyCode==83){
+            $('#player').css('top', '+=10')
+            checkPos()
+        }
+        else if (e.keyCode==13){
+            console.log('Entered')
+            player_pos = $('#player').position()
+            console.log(player_pos)
+            console.log(player_pos.left)
+            console.log(player_pos.top)
+        }
+    })
+
+
+    function checkPos(){
+        // プレイヤーの位置情報を取得
+        player_pos = $('#player').position()
+        player_pos_l = Math.floor(player_pos.left)
+        player_pos_t = Math.floor(player_pos.top)
+        if (240<player_pos_l && player_pos_l<440 && 230<player_pos_t && player_pos_t<330){
+            console.log('草むらにいるよ')
+            let is_battle = Math.floor(Math.random()*6) //0~2の整数を生成
+            console.log(is_battle)
+            if (is_battle==1){
+                player_pos = $('#player').position()
+                player_left =  parseInt(player_pos.left,10)
+                player_top = parseInt(player_pos.top,10)
+                alert('草むらから何か飛び出してきた！')
+                player_url = '/battle/'+player_pos.left+'/'+player_top
+                window.location.href = player_url
+            }
+
+        }
+    }
+
+
+    $('#player').on('click', function(){
+        console.log('ok')
+    })
+
+    $('#battle').on('click', function(){
+        console.log('moveToBattle!')
+        player_pos = $('#player').position()
+        player_left =  player_pos.left
+        player_top = player_pos.top
+        player_url = '/battle/'+player_pos.left+'/'+player_top
+        window.location.href = player_url
+    })
+
+    // 画面読み込み時に、セッションがあれば位置情報を変更
+
+</script>
+{% endblock %}
