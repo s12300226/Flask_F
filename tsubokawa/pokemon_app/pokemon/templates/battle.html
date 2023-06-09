@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{#
+<p>{{ session['player_left'] }}</p>
+<p>{{ session['player_top'] }}</p>
+BATTLE!
+
+#}
+
+
+<audio id="audio" loop>
+    <source src="{{ url_for('static', filename='audio/battle_BGM.mp3') }}"  type="audio/mp3">
+  </audio>
+
+  <div id="battle_show">
+    <div id="mons_info">
+        <p>{{ monster.mons_name }}</p>
+        <p>hp : {{ monster.mons_hp }}</p>
+    </div>
+    <img src="{{ url_for('static', filename='image/genga.png') }}" alt="" id="monster">
+    
+
+    <div id="command_show">
+        <p id="player_info">プレイヤーHP : {{ player.hp }}</p>
+        <form id="commands" method="post" action="{{ url_for('choice_check', id=monster.id) }}">
+            <button id="choice-battle" name="choice" value="battle">戦う</button>
+            <button id="choice-catch" name="choice" value="catch">捕まえる</button>
+            <button id="choice-escape" name="choice" value="escape">逃げる</button>
+        </form>
+    </div>
+  </div>
+
+<script>
+    $(document).ready(function(){
+        console.log('clicked')
+        $('#audio').get(0).play();
+    })
+
+    // $('#choice-escape').on('click', function(){
+    //     alert('上手く逃げ切れた')
+    //     window.location.href ="{{  url_for('escape')  }}"
+    // })
+
+
+</script>
+{% endblock %}
