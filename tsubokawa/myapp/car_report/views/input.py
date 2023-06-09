@@ -75,7 +75,7 @@ def show_reports():
         # 対応済みのものを表示
         print('対応済みのものを出すよ')
         status = 'done'
-        reports = db.session.query(Report).filter(Report.status=='対応済み').order_by(Report.report_date.asc()).all()
+        reports = db.session.query(Report).filter(Report.status=='対応済み').order_by(Report.report_date.desc()).all()
 
     else:
     # statusが未対応のデータのみ表示
@@ -145,7 +145,6 @@ def map():
         folium.Circle(
             radius=30,
             location=[report.lat,report.lon],
-            # location=[35.69, 139.69],
             tooltip=report.text,
             color="green",
             fill=True,

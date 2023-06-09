@@ -58,4 +58,13 @@
     {% block body %}
     {% endblock %}
 </body>
+
+<script>
+    console.log('OK')
+    $('#title').on('click', function(){
+        console.log('clicked')
+        window.location.href = "{{ url_for('input') }}";
+    })
+</script>
+
 </html>
